@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# AgriScan - Offline Python Flask & SQLite Backend Server
+## Department of Computer Science & Engineering Capstone Project
 
-# Run and deploy your AI Studio app
+This directory contains the complete standalone Python Flask backend for the **AgriScan** system.
 
-This contains everything you need to run your app locally.
+### Prerequisites
+- Python 3.9+ installed on your localhost machine.
+- Pip package manager.
 
-View your app in AI Studio: https://ai.studio/apps/29a93a32-6083-482c-a2a4-e7f0cc1bbbf9
+### 1. Installation Instructions
+Open your terminal in this directory:
+```bash
+cd backend-python-flask
+python -m venv venv
 
-## Run Locally
+# On Linux/macOS:
+source venv/bin/activate
 
-**Prerequisites:**  Node.js
+# On Windows:
+venv\Scripts\activate
 
+# Install required offline libraries:
+pip install -r requirements.txt
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 2. Run the Localhost Server
+```bash
+python app.py
+```
+Output will confirm:
+```
+=================================================================
+ AGRISCAN PYTHON FLASK OFFLINE ENGINE STARTING ON LOCALHOST
+ SQLite Database: agriscan.db
+ Open in Browser: http://127.0.0.1:5000
+=================================================================
+```
+
+### 3. API Endpoints
+- `GET  /api/health` - Verifies offline operational status.
+- `POST /api/auth/register` - Registers farmer with SHA-256 hashed password.
+- `POST /api/auth/login` - Authenticates user from local SQLite table.
+- `POST /api/scans/analyze` - Executes Computer Vision leaf analysis.
+- `GET  /api/scans/history` - Returns local scan logs.
+
+### 4. Zero Cloud Connectivity
+No external internet access or third-party cloud API keys are needed. All diagnostic processing occurs on CPU via local algorithms and SQLite file storage.
