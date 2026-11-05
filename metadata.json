@@ -1,0 +1,6 @@
+{
+  "name": "AgriScan - Offline AI Crop Disease & Pest Intelligence System",
+  "description": "Complete offline AI-powered crop disease detection, pest identification, nutrient deficiency analysis, risk prediction, and multilingual agricultural intelligence system for farmers.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
